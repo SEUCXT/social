@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cjx.social.mapper.FriendUserMapper">
+    <insert id="addFriend" parameterType="com.cjx.social.entity.Friend">
+        insert into
+        t_friend(myId,friendId,relation)VALUES (#{myId},#{friendId},#{relationship})
+    </insert>
+
+    <delete id="deleteFriend">
+        delete from t_friend where friendId=#{friendId} AND myId = #{myId}
+    </delete>
+
+    <select id="getFriendByMyId" parameterType="long" resultType="com.cjx.social.entity.Friend">
+        select
+        myId,friendId,relation as relationship
+        FROM t_friend
+        WHERE myId=#{Id}
+    </select>
+
+</mapper>
