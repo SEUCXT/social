@@ -14,4 +14,6 @@ public interface FriendUserService {
     void addFriend(Friend firend);
     void deleteFriend(@Param("friendId") long friendId, @Param("myId") long myId);
     List<Friend> getFriendByMyId(long id);
+    void updateFriend(@Param("myId") long myId, @Param("friendId") long friendId,
+                      @Param("relationship") String relationship);
 }

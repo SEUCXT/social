@@ -26,8 +26,8 @@ public class FriendController {
     @ResponseBody
     public void add(@RequestParam("myId") long myId,
                     @RequestParam("friendId") long friendId,
-                    @RequestParam("relationship") String relationship){
-        Friend friend=new Friend();
+                    @RequestParam("relationship") String relationship) {
+        Friend friend = new Friend();
         friend.setMyId(myId);
         friend.setFriendId(friendId);
         friend.setRelationship(relationship);
@@ -35,16 +35,25 @@ public class FriendController {
 
 
     }
+
     @RequestMapping("/delete")
     @ResponseBody
     public void delete(@RequestParam("friendId") long friendId,
-                       @RequestParam("myId") long myId){
-        friendUserService.deleteFriend(friendId,myId);
+                       @RequestParam("myId") long myId) {
+        friendUserService.deleteFriend(friendId, myId);
     }
 
     @RequestMapping("/getFriends")
     @ResponseBody
-    public List<Friend> getFriends(@RequestParam("id") long id){
+    public List<Friend> getFriends(@RequestParam("id") long id) {
         return friendUserService.getFriendByMyId(id);
+    }
+
+    @RequestMapping("/updateFriends")
+    @ResponseBody
+    public void update(@RequestParam("myId") long myId,
+                       @RequestParam("friendId") long friendId,
+                       @RequestParam("relationship") String relationship) {
+        friendUserService.updateFriend(myId,friendId,relationship);
     }
 }

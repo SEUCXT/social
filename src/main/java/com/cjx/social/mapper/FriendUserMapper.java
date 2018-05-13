@@ -17,4 +17,5 @@ public interface FriendUserMapper{
     void deleteFriend(@Param("friendId") long friendId, @Param("myId") long myId);
         //void updateFriend(User user);
     List<Friend> getFriendByMyId(long id);
+    void updateFriend(@Param("myId") long myId, @Param("friendId") long friendId,@Param("relationship") String relationship);
 }

@@ -34,4 +34,8 @@ public class FriendUserServiceImpl implements FriendUserService{
     public List<Friend> getFriendByMyId(long id) {
         return friendMap.getFriendByMyId(id);
     }
+
+    @Override
+    public void updateFriend(long myId,long friendId, String relationship){
+        friendMap.updateFriend(myId,friendId,relationship);}
 }

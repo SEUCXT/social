@@ -19,4 +19,7 @@
         WHERE myId=#{Id}
     </select>
 
+    <update id="updateFriend" >
+        UPDATE t_friend set relation=#{relationship} WHERE myId=#{myId} And friendId=#{friendId}
+    </update>
 </mapper>

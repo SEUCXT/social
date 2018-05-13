@@ -45,12 +45,4 @@
         WHERE id = #{id}
     </select>
 
-    <!--<select id="getFriends" parameterType="long" resultType="com.cjx.social.entity.Friend">-->
-        <!--select-->
-        <!--myId,-->
-        <!--friendId,-->
-        <!--relation as relationship-->
-        <!--from t_friend-->
-        <!--where myId = #{id}-->
-    <!--</select>-->
 </mapper>
