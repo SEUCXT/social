@@ -32,8 +32,6 @@ public class FriendController {
         friend.setFriendId(friendId);
         friend.setRelationship(relationship);
         friendUserService.addFriend(friend);
-
-
     }
 
     @RequestMapping("/delete")
